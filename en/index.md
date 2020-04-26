@@ -332,6 +332,7 @@ I measured size of [DevFest Siberia 2019](https://github.com/TrigenSoftware/DevF
         </tr>
     </tbody>
 </table>
+
 Result is increased loading speed and size of the bundle decreased by ≈20%, [read more detailed report](https://gist.github.com/dangreen/5427c5f2158c357bf0b15d38270508ac). You can also make measurements by yourself — necessary script you can find [in bdsl-webpack-plugin repository](https://github.com/TrigenSoftware/bdsl-webpack-plugin#metrics).
 
 ### Sources
