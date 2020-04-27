@@ -76,7 +76,7 @@ Next, you need to configure server to send right bundle to user’s browser:
 import { matchesUA } from 'browserslist-useragent'
 /* … */
 app.get('/', (request, response) => {
-    const userAgen = request.get('User-Agent')
+    const userAgent = request.get('User-Agent')
     const isModernBrowser = matchesUA(userAgent, {
         env: 'modern',
         allowHigherVersions: true
@@ -224,9 +224,9 @@ From already read part of the article, we learned several ways of using Browsers
 
 By default, build process should avoid transpilation of dependencies, since then the build will take a lot of time, and dependencies, if their sources use unsupported syntax, are usually distributed already transpiled. In practice, there are three types of packages:
 
-1. With transpiled code;
-2. With transpiled code and sources;
-3. With code with current syntax only for new browsers.
+1. with transpiled code;
+2. with transpiled code and sources;
+3. with code with current syntax only for new browsers.
 
 With the first type, obviously, nothing can be done. The second — you need to configure bundler to work only with sources from package. The third type — for code to work, even in not very relevant browsers, you still need to transpile it.
 
