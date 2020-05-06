@@ -142,7 +142,7 @@ script.src = modernBrowsers.test(navigator.userAgent)
 document.all[1].appendChild(script)
 ```
 
-Another fact is that generated regexes are faster than matchesUA function from browserslist-useragent, so it makes sense to use browserslist-useragent-regexp on server side too:
+Another fact is that generated regexpes are faster than matchesUA function from browserslist-useragent, so it makes sense to use browserslist-useragent-regexp on server side too:
 
 ```js
 > matchesUA('Mozilla/5.0 (Windows NT 10.0; rv:54.0) Gecko/20100101 Firefox/54.0', { browsers: ['Firefox > 53']})
@@ -333,7 +333,7 @@ I've measured [DevFest Siberia 2019](https://github.com/TrigenSoftware/DevFest-S
     </tbody>
 </table>
 
-The result is an increased loading time and bundle size decreased by ≈20%, [read more detailed report](https://gist.github.com/dangreen/5427c5f2158c357bf0b15d38270508ac). You can also make measurements by yourself — you can find required script [in bdsl-webpack-plugin repository](https://github.com/TrigenSoftware/bdsl-webpack-plugin#metrics).
+The result is an decreased loading time and bundle size reduction by ≈20%, [read more detailed report](https://gist.github.com/dangreen/5427c5f2158c357bf0b15d38270508ac). You can also make measurements by yourself — you can find required script [in bdsl-webpack-plugin repository](https://github.com/TrigenSoftware/bdsl-webpack-plugin#metrics).
 
 ### Sources
 
