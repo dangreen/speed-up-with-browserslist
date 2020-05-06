@@ -53,11 +53,11 @@ In March 2019 [Matthias Binens](https://twitter.com/mathias) from Google [propos
 <script nomodule src="legacy.js"></script>
 ```
 
-Until now, his proposal stays only a proposal, and it is unknown whether this will be implemented by vendors or not. But the concept is understandable, and Browserslist family has tools you can implement something similar, one of them is [browserslist-useragent](https://github.com/browserslist/browserslist-useragent). This tool allows you to check browser’s User-Agent on satisfying your config.
+Until now, his proposal stays only a proposal, and it is unknown whether this will be implemented by vendors or not. But the concept is understandable, and Browserslist family has tools that you can use to implement something similar, one of them is [browserslist-useragent](https://github.com/browserslist/browserslist-useragent). This tool allows you to check browser’s User-Agent on satisfying your config.
 
 #### Browserslist-useragent
 
-There are already several articles on this topic, here is an example of one — [«Smart Bundling: How To Serve Legacy Code Only To Legacy Browsers»](https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/). We will briefly go over the implementation. First, you need to configure your build process to output two versions of bundles for new and legacy browsers, for example. Here Browserslist will help you with its [ability to declare several environments in configuration file](https://github.com/browserslist/browserslist#configuring-for-different-environments):
+There are already several articles on this topic, here is an example of one — [«Smart Bundling: How To Serve Legacy Code Only To Legacy Browsers»](https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/). We will briefly go over the implementation. First, you need to configure your build process to output two versions of bundles for new and legacy browsers, for example. Here, Browserslist will help you with its [ability to declare several environments in a configuration file](https://github.com/browserslist/browserslist#configuring-for-different-environments):
 
 ```
 [modern]
@@ -349,3 +349,4 @@ The result is an increased loading time and bundle size decreased by ≈20%, [re
 
 ### Translation
 - [Dan Onoshko](https://twitter.com/dangreen58)
+- [Anton Borisov](https://github.com/borzoni)
