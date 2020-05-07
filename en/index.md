@@ -4,7 +4,7 @@ Today we have a large number of different browsers and even more versions of eac
 
 Developers want to use new features, as they often simplify their lives. Using modern development tools, you can use features before they even get an official vendor support by transpiling and using polyfills. Additionally, these tools guarantee that a website will work in all browsers, regardless of a particular feature support. Examples: [Autoprefixer](https://github.com/postcss/autoprefixer) and [postcss-preset-env](https://preset-env.cssdb.org) for CSS, [Babel](https://babeljs.io) for JavaScript. But you need to understand that using these tools can increase the bundle's size.
 
-As a result, we have a website that works in any browser, but it loads slower. Let me remind you that the loading time and fast transitions directly affects UX and popularity. What can be done with it? In fact, we don’t need to transpile and polyfill absolutely every feature — it’s enough to do this only with those that are not supported by the current browsers (or relevant to the audience of your website). For example, promises are supported by every browser, excluding the oldest ones.
+As a result, we have a website that works in any browser, but it loads slower. Let me remind you that the loading time and fast transitions directly affects UX and popularity. What can be done with it? In fact, we don’t need to transpile and polyfill absolutely every feature — it’s enough to do this only with those that are not supported by current browsers (or relevant to the audience of your website). For example, promises are supported by every browser, excluding the oldest ones.
 
 ## Browserslist
 
@@ -20,7 +20,7 @@ This is an example of `.browserslistrc` file, that requires live browsers over t
 
 Already mentioned [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-preset-env](https://preset-env.cssdb.org) and [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) under the hood use Browserslist, and if your project has a Browserslist config, project code will be compiled for these browsers.
 
-At this stage, we can come to the following conclusion: the newer browsers we are targeting, the less bundle size we get. At the same time, we should not forget that in the real world not every single user has the newest browser, and the website should be accessible for all the users, or at least for the most of them. What can be done under these considerations?
+At this stage, we can come to the following conclusion: the newer browsers we are targeting, the less bundle size we get. At the same time, we should not forget that in the real world not every single user has the newest browser, and the website should be accessible for all users, or at least for the most of them. What can be done under these considerations?
 
 ## Browser targeting variants
 
@@ -93,14 +93,14 @@ Thus, the website will send a lightweight bundle to users with new browsers, res
 
 #### Module/nomodule
 
-With browsers' support of ES-modules, there was found a way to implement DSL on the client side:
+With browsers' support of ES-modules, there is a way to implement DSL on client side:
 
 ```html
 <script type="module" src="index.modern.js"></script>
 <script nomodule src="index.legacy.js"></script>
 ```
 
-This pattern is called module/nomodule, and it's based on the fact that the legacy browsers without ES-modules' support will not handle scripts with the type `module`, since this type is unknown to them. So browsers that support ES-modules will load scripts with the type `module` and ignore scripts with the `nomodule` attribute. Browsers with ES-modules' support can be specified by the following config:
+This pattern is called module/nomodule, and it's based on the fact that legacy browsers without ES-modules' support will not handle scripts with the type `module`, since this type is unknown to them. So browsers that support ES-modules will load scripts with the type `module` and ignore scripts with the `nomodule` attribute. Browsers with ES-modules' support can be specified by the following config:
 
 ```
 [esm]
@@ -111,7 +111,7 @@ safari >= 11
 opera >= 48
 ```
 
-The biggest advantage of the module/nomodule pattern is that you don’t need to own a server — everything works completely on the client side. Differential stylesheet loading cannot be done this way, but you can implement resource loading using JavaScript:
+The biggest advantage of the module/nomodule pattern is that you don’t need to own a server — everything works completely on client side. Differential stylesheet loading cannot be done this way, but you can implement resource loading using JavaScript:
 
 ```js
 if ('noModule' in document.createElement('script')) {
@@ -128,7 +128,7 @@ You can read more about the module/nomodule pattern in the article [«Modern Scr
 #### Browserslist-useragent-regexp
 
 More recently, another tool was created for Browserslist: [browserslist-useragent-regexp](https://github.com/browserslist/browserslist-useragent-regexp). This tool allows you to get a regular expression from config to check 
-browser’s User-Agent. Regular expressions work in any JavaScript runtime, which makes it possible to check the browser’s User-Agent not only on the server side, but also on the client side. Thus, you can implement a working DSL in a browser:
+browser’s User-Agent. Regular expressions work in any JavaScript runtime, which makes it possible to check the browser’s User-Agent not only on server side, but also on client side. Thus, you can implement a working DSL in a browser:
 
 ```js
 // last 2 firefox versions
@@ -142,7 +142,7 @@ script.src = modernBrowsers.test(navigator.userAgent)
 document.all[1].appendChild(script)
 ```
 
-Another fact is that generated regexpes are faster than matchesUA function from browserslist-useragent, so it makes sense to use browserslist-useragent-regexp on the server side too:
+Another fact is that generated regexpes are faster than matchesUA function from browserslist-useragent, so it makes sense to use browserslist-useragent-regexp on server side too:
 
 ```js
 > matchesUA('Mozilla/5.0 (Windows NT 10.0; rv:54.0) Gecko/20100101 Firefox/54.0', { browsers: ['Firefox > 53']})
@@ -214,13 +214,13 @@ else dsl(dsla[0],"/index.legacy.js");dsld.all[1].appendChild(dslf)</script>
 </html>
 ```
 
-In addition to the scripts loading, there is support for [styles loading](https://github.com/TrigenSoftware/bdsl-webpack-plugin/tree/master/examples/postcss-preset-env). It is also possible to use this plugin on the [server side](https://github.com/TrigenSoftware/bdsl-webpack-plugin/tree/master/examples/SsrBdslWebpackPlugin).
+In addition to scripts loading, there is support for [styles loading](https://github.com/TrigenSoftware/bdsl-webpack-plugin/tree/master/examples/postcss-preset-env). It is also possible to use this plugin on [server side](https://github.com/TrigenSoftware/bdsl-webpack-plugin/tree/master/examples/SsrBdslWebpackPlugin).
 
-But, unfortunately, there are some nuances that you should know before starting to use bdsl-webpack-plugin: since scripts and styles loading is initialized by JavaScript, they are loaded asynchronously without render being blocked, and etc. For example, in case of the scripts — this means an inability to use `defer` attribute, and for the styles — the necessity to hide page content until styles are fully loaded. You can investigate how to get around these nuances, and the other features of this plugin yourself, see [documentation](https://github.com/TrigenSoftware/bdsl-webpack-plugin/blob/master/README.md) an [usage examples](https://github.com/TrigenSoftware/bdsl-webpack-plugin#examples).
+But, unfortunately, there are some nuances that you should know before starting to use bdsl-webpack-plugin: since scripts and styles loading is initialized by JavaScript, they are loaded asynchronously without render being blocked, and etc. For example, in case of the scripts — this means an inability to use `defer` attribute, and for the styles — the necessity to hide page content until styles are fully loaded. You can investigate how to get around these nuances, and other features of this plugin yourself, see [documentation](https://github.com/TrigenSoftware/bdsl-webpack-plugin/blob/master/README.md) and [usage examples](https://github.com/TrigenSoftware/bdsl-webpack-plugin#examples).
 
 ## Dependencies transpilation
 
-Following aforesaid part of the article, we learned several ways of using Browserslist to reduce the size of the website's _own_ code, but the other part of the bundle is its dependencies. In a web applications, the size of the dependencies in the final bundle can take up a significant part.
+Following the aforesaid part of the article, we've learned several ways of using Browserslist to reduce the size of the website's _own_ code, but the other part of the bundle is its dependencies. In web applications, the size of the dependencies in the final bundle can take up a significant part.
 
 By default, the build process should avoid the transpilation of dependencies, otherwise the build will take a lot of time. Also dependencies, utilizing unsupported syntax, are usually distributed already transpiled. In practice, there are three types of packages:
 
@@ -230,7 +230,7 @@ By default, the build process should avoid the transpilation of dependencies, ot
 
 With the first type, obviously, nothing can be done. The second — you need to configure the bundler to work only with the sources from the package. The third type — in order to make it work (even with not very relevant browsers) you still have to transpile it.
 
-Since there is no common way to make packages with the several versions of bundle, I will describe how I suggest to approach this problem: the regular transpiled version has `.js` extension, the main file is written to the `main` field of `package.json` file, while, on the contrary, the version of the bundle without transpilation has `.babel.js` extension, and the main file is written in the `raw` field. Here is a real example — [Canvg](https://unpkg.com/browse/canvg/) package. But you can do it another way, for example, here is how it's done [in Preact package](https://unpkg.com/browse/preact/) — the sources are located in the separate folders, and `package.json` has a `source` field.
+Since there is no common way to make packages with several versions of the bundle, I will describe how I suggest to approach this problem: the regular transpiled version has `.js` extension, the main file is written to the `main` field of `package.json` file, while, on the contrary, the version of the bundle without transpilation has `.babel.js` extension, and the main file is written in the `raw` field. Here is a real example — [Canvg](https://unpkg.com/browse/canvg/) package. But you can do it another way, for example, here is how it's done [in Preact package](https://unpkg.com/browse/preact/) — the sources are located in the separate folders, and `package.json` has a `source` field.
 
 To make Webpack work with such packages, you need to modify `resolve` config section:
 
