@@ -4,7 +4,7 @@ Today we have a large number of different browsers and even more versions of eac
 
 Developers want to use new features, as they often simplify their lives. Using modern development tools, you can use features before they even get an official vendor support by transpiling and using polyfills. Additionally, these tools guarantee that a website will work in all browsers, regardless of a particular feature support. Examples: [Autoprefixer](https://github.com/postcss/autoprefixer) and [postcss-preset-env](https://preset-env.cssdb.org) for CSS, [Babel](https://babeljs.io) for JavaScript. But you need to understand that using these tools can increase the bundle's size.
 
-As a result, we have a website that works in any browser, but it loads slower. Let me remind you that the loading time and fast transitions directly affects UX and popularity. What can be done with it? In fact, we don’t need to transpile and polyfill absolutely every feature — it’s enough to do this only with those that are not supported by the current browsers (or relevant to the audience of your website). For example, promises are supported by every browser, excluding the oldest ones.
+As a result, we have a website that works in any browser, but it loads slower. Let me remind you that the loading time and fast transitions directly affects UX and popularity. What can be done with it? In fact, we don’t need to transpile and polyfill absolutely every feature — it’s enough to do this only with those that are not supported by current browsers (or relevant to the audience of your website). For example, promises are supported by every browser, excluding the oldest ones.
 
 ## Browserslist
 
