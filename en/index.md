@@ -89,7 +89,7 @@ app.get('/', (request, response) => {
 })
 ```
 
-Thus, the website will send a lightweight bundle to users with new browsers, resulting in a faster loading time, while saving accessibility for other users. But, as you can see, this method requires your own server with special logic.
+Thus, the website will send a lightweight bundle to users with modern browsers, resulting in a faster loading time, while saving accessibility for other users. But, as you can see, this method requires your own server with special logic.
 
 #### Module/nomodule
 
@@ -225,7 +225,7 @@ By default, the build process should avoid the transpilation of dependencies, 
 
 1. with transpiled code;
 2. with transpiled code and sources;
-3. with code with current syntax only for new browsers.
+3. with code with current syntax only for modern browsers.
 
 With the first type, obviously, nothing can be done. The second — you need to configure the bundler to work only with the sources from the package. The third type — in order to make it work (even with not very relevant browsers) you still have to transpile it.
 
