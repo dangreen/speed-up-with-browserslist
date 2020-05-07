@@ -93,7 +93,7 @@ Thus, the website will send a lightweight bundle to users with new browsers, res
 
 #### Module/nomodule
 
-With browsers' support of ES-modules, there was found a way to implement DSL on client side:
+With browsers' support of ES-modules, there is a way to implement DSL on client side:
 
 ```html
 <script type="module" src="index.modern.js"></script>
