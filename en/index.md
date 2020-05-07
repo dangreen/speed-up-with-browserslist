@@ -93,7 +93,7 @@ Thus, the website will send a lightweight bundle to users with new browsers, res
 
 #### Module/nomodule
 
-With browsers' support of ES-modules, there was found a way to implement DSL on client side:
+With browsers' support of ES-modules, there is a way to implement DSL on client side:
 
 ```html
 <script type="module" src="index.modern.js"></script>
@@ -220,7 +220,7 @@ But, unfortunately, there are some nuances that you should know before starting 
 
 ## Dependencies transpilation
 
-Following aforesaid part of the article, we've learned several ways of using Browserslist to reduce the size of the website's _own_ code, but the other part of the bundle is its dependencies. In web applications, the size of the dependencies in the final bundle can take up a significant part.
+Following the aforesaid part of the article, we've learned several ways of using Browserslist to reduce the size of the website's _own_ code, but the other part of the bundle is its dependencies. In web applications, the size of the dependencies in the final bundle can take up a significant part.
 
 By default, the build process should avoid the transpilation of dependencies, otherwise the build will take a lot of time. Also dependencies, utilizing unsupported syntax, are usually distributed already transpiled. In practice, there are three types of packages:
 
