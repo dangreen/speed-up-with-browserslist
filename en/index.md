@@ -336,7 +336,6 @@ I've measured [DevFest Siberia 2019](https://github.com/TrigenSoftware/DevFest-S
 The result is a decreased loading time and bundle size reduction by ≈20%, [read more detailed report](https://gist.github.com/dangreen/5427c5f2158c357bf0b15d38270508ac). You can also make measurements by yourself — you can find the required script [in the bdsl-webpack-plugin repository](https://github.com/TrigenSoftware/bdsl-webpack-plugin#metrics).
 
 ### Sources
-
 - [Smart Bundling: How To Serve Legacy Code Only To Legacy Browsers](https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/), Shubham Kanodia
 - [Modern Script Loading](https://jasonformat.com/modern-script-loading/), Jason Miller
 
@@ -344,7 +343,7 @@ The result is a decreased loading time and bundle size reduction by ≈20%, [rea
 - [Dan Onoshko](https://twitter.com/dangreen58)
 
 ### Editor
-- [Vadim Makeev](https://twitter.com/pepelsbey)
+- [Vadim Makeev](https://twitter.com/pepelsbey_)
 - Irina Pitaeva
 
 ### Translation
