@@ -335,7 +335,6 @@ else dsl(dsla[0],"/index.legacy.js");dsld.all[1].appendChild(dslf)</script>
 В итоге получился прирост скорости загрузки и размер бандла уменьшился на ≈20%, [читайте более подробный отчёт](https://gist.github.com/dangreen/5427c5f2158c357bf0b15d38270508ac). Также вы можете самостоятельно провести подобные замеры — необходимый скрипт есть [в репозитории bdsl-webpack-plugin](https://github.com/TrigenSoftware/bdsl-webpack-plugin#metrics).
 
 ### Источники
-
 - [Smart Bundling: How To Serve Legacy Code Only To Legacy Browsers](https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/), Шабхам Канодия
 - [Modern Script Loading](https://jasonformat.com/modern-script-loading/), Джейсон Миллер
 
