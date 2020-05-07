@@ -350,3 +350,4 @@ The result is a decreased loading time and bundle size reduction by ≈20%, [rea
 ### Translation
 - [Dan Onoshko](https://twitter.com/dangreen58)
 - [Anton Borisov](https://github.com/borzoni)
+- [Kat Sas](https://t.me/tinwelen)
