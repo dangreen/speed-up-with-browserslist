@@ -343,7 +343,7 @@ The result is a decreased loading time and bundle size reduction by ≈20%, [r
 
 ### Editor
 - [Vadim Makeev](https://twitter.com/pepelsbey_)
-- Irina Pitaeva
+- [Irina Pitaeva](https://t.me/p_irie)
 
 ### Translation
 - [Dan Onoshko](https://twitter.com/dangreen58)

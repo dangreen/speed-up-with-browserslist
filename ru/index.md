@@ -343,4 +343,4 @@ else dsl(dsla[0],"/index.legacy.js");dsld.all[1].appendChild(dslf)</script>
 
 ### Редактура
 - [Вадим Макеев](https://twitter.com/pepelsbey)
-- Ирина Питаева
+- [Ирина Питаева](https://t.me/p_irie)
