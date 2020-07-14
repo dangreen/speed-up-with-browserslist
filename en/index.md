@@ -16,7 +16,7 @@ last 2 years
 not dead
 ```
 
-This is an example of `.browserslistrc` file, that requires: browsers over the past two years, browsers with more than 1% of users, and all of these browsers must be «live». You can see specific browsers resolution on [browserl.ist](https://browserl.ist/). Learn more about queries syntax [on project page](https://github.com/browserslist/browserslist).
+This is an example of `.browserslistrc` file, that requires: browsers over the past two years, plus browsers with more than 1% of users, and all of these browsers must be «live». You can see specific browsers resolution on [browserl.ist](https://browserl.ist/). Learn more about queries syntax [on project page](https://github.com/browserslist/browserslist).
 
 Already mentioned [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-preset-env](https://preset-env.cssdb.org) and [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) under the hood use Browserslist, and if your project has a Browserslist config, project code will be compiled for these browsers.
 
