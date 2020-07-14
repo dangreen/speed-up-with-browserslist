@@ -16,7 +16,7 @@ last 2 years
 not dead
 ```
 
-Этот пример файла `.browserslistrc` означает, что вам нужны живые браузеры за последние два года, у которых больше 1% пользователей. Посмотреть в какие конкретные браузеры это разрезолвится можно на сайте [browserl.ist](https://browserl.ist/), а более подробно узнать про синтаксис выражений можно [на странице проекта](https://github.com/browserslist/browserslist).
+Этот пример файла `.browserslistrc` означает, что вам нужны живые браузеры за последние два года, браузеры у которых больше 1% пользователей, и все эти браузеры должны быть «живыми». Посмотреть в какие конкретные браузеры это разрезолвится можно на сайте [browserl.ist](https://browserl.ist/), а более подробно узнать про синтаксис выражений можно [на странице проекта](https://github.com/browserslist/browserslist).
 
 Уже упомянутые [Autoprefixer](https://github.com/postcss/autoprefixer), [postcss-preset-env](https://preset-env.cssdb.org) и [babel-preset-env](https://babeljs.io/docs/en/babel-preset-env) под капотом используют Browserslist, и если в вашем проекте есть конфиг Browserslist, то код проекта будет собран под эти браузеры.
 
@@ -193,7 +193,7 @@ function createWebpackConfig(env) {
             new HtmlWebpackPlugin(/* … */),
             new BdslWebpackPlugin({ env })
         ]
-    };
+    }
 }
 
 module.exports = getBrowserslistEnvList().map(createWebpackConfig)
